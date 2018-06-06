@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace name_sorter
+namespace NameSorter
 {
     class Program
     {
