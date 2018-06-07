@@ -1,6 +1,5 @@
 FROM microsoft/dotnet:2.1-runtime AS base
 WORKDIR /app
-COPY sorted-names.txt .
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /sln
@@ -20,5 +19,7 @@ RUN dotnet publish NameSorter/NameSorter.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
+COPY sorted-names.txt /output/
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "NameSorter.dll"]
+
