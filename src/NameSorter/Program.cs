@@ -1,8 +1,7 @@
 ﻿namespace NameSorter
-{
-    using Microsoft.Extensions;
+{    
     using Microsoft.Extensions.CommandLineUtils;
-    using System;
+    using Command;
 
     class Program
     {
@@ -10,17 +9,10 @@
         {
             var app = new CommandLineApplication();
             app.Name = "name-sorter";
-            app.Description = "Help sort names by last name then given name.";
-            app.HelpOption("-?|-h|--help");
+            app.Description = "This command tool help to sort names by last name then given name.";
+            app.HelpOption("-? | -h | --help");
 
-            var fileOption = app.Option("-f|--file <file>", "names in text file for sort", CommandOptionType.SingleValue);
-
-            app.OnExecute(() => {
-                var file = fileOption.Value();
-                Console.Write($"Reading file... {file}");
-                return 0;
-            });
-
+            SortCommand.Configure(app);
             app.Execute(args);
         }
     }

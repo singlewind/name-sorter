@@ -18,8 +18,8 @@ WORKDIR /sln/src
 RUN dotnet publish NameSorter/NameSorter.csproj -c Release -o /app
 
 FROM base AS final
+VOLUME /output
 WORKDIR /app
-COPY sorted-names.txt /output/
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "NameSorter.dll"]
+ENTRYPOINT ["dotnet", "NameSorter.dll", "/output/unsorted-names-list.txt"]
 
