@@ -25,11 +25,15 @@ docker build -t name-sorter .
 
 ## Run
 Copy *unsorted-names-list.txt* to output folder
+
+### Linux and Mac
 ```sh
 docker run -it --rm -v $(pwd)/output:/output name-sorter
 ```
 
-for Windows, if above doesn't work, you can try
+### Windows
+
+for PowerShell
 ```PowerShell
 docker run -it --rm -v ${PWD}\output:/output name-sorter
 ```
