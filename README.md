@@ -15,6 +15,10 @@ We will execute your submission against a list with a thousand names
 4. Choose docker builder over another vendors for independant.
 
 ## Build and Test
+If you build code directly, you need .NET Core SDK 2.1 installed. For [installtion](https://www.microsoft.com/net/learn/get-started/windows)
+
+Or, if you have docker installed, you can use following command to build without SDK.
+
 ```PowerShell
 docker build -t name-sorter .
 ```
