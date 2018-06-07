@@ -20,7 +20,7 @@ docker build -t name-sorter .
 ```
 
 ## Run
-Copy *unsorted-names-list.txt* to solution folder
+Copy *unsorted-names-list.txt* to output folder
 ```sh
 docker run -it --rm -v $(pwd)/output:/output name-sorter
 ```
@@ -41,6 +41,7 @@ docker run -it --rm -v %cd%\output:/output name-sorter
 4. Move the interfaces to NameSorter.Abastraction
 5. Move the implementaion to NameSorter.Services
 6. Implement async interface instead of sync to improve performance in shared environment
+7. Imporve comment in code to be more consistent and fluent
 
 
 ## Cleanup dangling images

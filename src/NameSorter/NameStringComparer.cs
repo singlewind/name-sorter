@@ -4,6 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    /// <summary>
+    /// Compare name by last name, then given name
+    /// </summary>
     public class NameStringComparer : IComparer<string>
     {
         private readonly IComparer<string> _baseComparer = StringComparer.InvariantCulture;

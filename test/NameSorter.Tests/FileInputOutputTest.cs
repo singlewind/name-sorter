@@ -33,6 +33,7 @@
             var inputService = new FileInputService(path);
             var data = inputService.Read();
 
+            Assert.AreEqual(_expected.Length, data.Length);
             for (var i = data.Length - 1; i >= 0; i--)
             {
                 Assert.AreEqual(_expected[i], data[i]);

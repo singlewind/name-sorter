@@ -1,6 +1,8 @@
-﻿using System;
-namespace NameSorter
+﻿namespace NameSorter
 {
+    /// <summary>
+    /// Name data input service
+    /// </summary>
     public interface IInputService
     {
         string[] Read();
